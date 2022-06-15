@@ -1,9 +1,14 @@
+import defaultTheme from 'windicss/defaultTheme'
 import { defineConfig } from 'windicss/helpers'
 
 export default defineConfig({
   attributify: true,
   theme: {
-    extend: {}
+    extend: {
+      fontFamily: {
+        sans: ['Inter', defaultTheme.fontFamily.sans]
+      }
+    }
   },
   extract: {
     include: ['src/**/*.{vue,html,jsx,tsx}'],
