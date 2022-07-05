@@ -1,5 +1,4 @@
 <template>
-  <div>
-    <h1>All Notes</h1>
-  </div>
+  <AppHeader title="Notes" />
+  <main />
 </template>
