@@ -8,6 +8,10 @@ const props = defineProps({
   }
 })
 
+const emit = defineEmits(['update:open', Boolean])
+
+const handleCloseSidebar = () => emit('update:open', false)
+
 const views = [
   {
     description: 'All notes',
@@ -58,6 +62,7 @@ const views = [
           >
             <RouterLink
               :to="view.path"
+              @click="handleCloseSidebar"
               class="px-2 py-4 flex items-center gap-2 text-base text-zinc-500 font-medium rounded"
             >
               <Icon

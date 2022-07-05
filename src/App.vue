@@ -6,7 +6,7 @@ const showSidebar = ref(false)
 
 <template>
   <div class="flex flex-col min-h-screen">
-    <AppSidebar :open="showSidebar" />
+    <AppSidebar v-model:open="showSidebar" />
     <div class="flex-1 lg:w-[calc(100%-384px)] lg:ml-auto">
       <RouterView />
     </div>
