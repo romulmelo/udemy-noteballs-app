@@ -19,7 +19,7 @@ const modalRef = ref(null)
 
 const handleCloseModal = () => emit('update:open', false)
 
-onClickOutside(modalRef, () => emit('update:open', false))
+onClickOutside(modalRef, handleCloseModal)
 </script>
 
 <template>
@@ -69,12 +69,7 @@ onClickOutside(modalRef, () => emit('update:open', false))
             >
               Cancel
             </AppButton>
-            <AppButton
-              type="submit"
-              size="large"
-            >
-              Add note
-            </AppButton>
+            <slot name="action"></slot>
           </footer>
         </div>
       </div>
