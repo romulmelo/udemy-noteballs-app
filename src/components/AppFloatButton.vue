@@ -14,7 +14,7 @@ const handleToggleSidebar = () => emit('update:open', !props.open)
 <template>
   <button
     type="button"
-    class="fixed bottom-4 right-4 p-4 bg-slate-800 rounded-full text-white ring-offset-2 ring-offset-slate-100 focus:outline-none focus:ring-2 lg:hidden lg:pointer-events-none"
+    class="rounded-full bg-slate-800 text-white p-4 right-4 bottom-4 ring-offset-2 ring-offset-slate-100 fixed lg:hidden lg:pointer-events-none focus:outline-none focus:ring-2"
     aria-label="Toggle Sidebar"
     @click="handleToggleSidebar"
     :title="props.open ? 'Close Sidebar' : 'Open Sidebar'"

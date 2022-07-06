@@ -41,7 +41,7 @@ const props = defineProps({
 
 <style lang="postcss" scoped>
 .button {
-  @apply h-12 px-4 py-2 flex items-center justify-center gap-2 rounded text-[14px] tracking-tight transition transition-colors duration-200;
+  @apply rounded flex h-12 tracking-tight py-2 px-4 transition transition-colors text-[14px] gap-2 duration-200 items-center justify-center;
 }
 
 .button--primary {
@@ -53,7 +53,7 @@ const props = defineProps({
 }
 
 .button--danger {
-  @apply text-red-600 border border-red-500 hover:bg-red-400/30;
+  @apply border border-red-500 text-red-600 hover:bg-red-400/30;
 }
 
 .button--large {
