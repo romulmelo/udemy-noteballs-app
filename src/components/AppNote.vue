@@ -2,10 +2,9 @@
 import { ref } from 'vue'
 
 const props = defineProps({
-  toDelete: {
-    type: Boolean,
-    default: false
-  }
+  title: String,
+  content: String,
+  toDelete: Boolean
 })
 
 const showModal = ref(false)
@@ -18,7 +17,9 @@ const showModal = ref(false)
   >
     <div class="flex flex-col">
       <header class="flex items-center justify-between">
-        <h2 class="font-bold text-xl text-zinc-900">Dog in the office</h2>
+        <h2 class="font-bold text-xl text-zinc-900">
+          {{ props.title }}
+        </h2>
         <button
           v-if="props.toDelete"
           type="button"
@@ -34,12 +35,7 @@ const showModal = ref(false)
         </button>
       </header>
       <p class="pt-4 text-zinc-800 line-clamp-5">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, in
-        quisquam odit quae recusandae illum animi architecto. Lorem ipsum dolor
-        sit amet consectetur adipisicing elit. Consequatur, in quisquam odit
-        quae recusandae illum animi architecto. Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Consequatur, in quisquam odit quae
-        recusandae illum animi architecto.
+        {{ props.content }}
       </p>
     </div>
   </div>
