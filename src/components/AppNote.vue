@@ -4,6 +4,7 @@ import { ref } from 'vue'
 const props = defineProps({
   title: String,
   content: String,
+  createdAt: Date,
   toDelete: Boolean
 })
 
@@ -16,6 +17,9 @@ const showModal = ref(false)
     @click="showModal = true"
   >
     <div class="flex flex-col">
+      <span class="text-sm pb-6 text-zinc-400 uppercase">
+        {{ props.createdAt }}
+      </span>
       <header class="flex items-center justify-between">
         <h2 class="font-bold text-xl text-zinc-900">
           {{ props.title }}

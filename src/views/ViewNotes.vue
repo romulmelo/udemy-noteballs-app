@@ -12,11 +12,13 @@ const newNote = reactive({
 
 const handleAddNewNote = () => {
   const uuid = new Date().getTime()
+  const createdAt = new Date().toISOString()
 
   const note = {
     id: uuid,
     title: newNote.title,
     content: newNote.content,
+    createdAt,
     toDelete: false
   }
 
@@ -69,6 +71,7 @@ useFocus(input, { initialValue: true })
           <AppNote
             :title="note.title"
             :content="note.content"
+            :createdAt="note.createdAt"
             :toDelete="note.toDelete"
           />
         </li>
