@@ -45,7 +45,7 @@ useFocus(input, { initialValue: true })
     <div class="flex flex-col p-10">
       <div v-if="notes.length === 0" class="flex flex-col gap-6 items-center">
         <img
-          src="src/static/img/no-results-found.svg"
+          src="@/static/img/no-results-found.svg"
           alt="Thow empty notebooks"
           loading="lazy"
           width="240"
