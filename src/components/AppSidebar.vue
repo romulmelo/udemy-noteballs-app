@@ -33,13 +33,13 @@ const views = [
 
 <template>
   <aside
-    class="fixed top-0 left-0 bottom-0 w-full bg-zinc-100 border-r-2 border-zinc-200 transform-gpu transition-transform duration-200 lg:max-w-sm lg:translate-x-0 lg:opacity-100"
+    class="bg-zinc-100 border-r-2 border-zinc-200 w-full transform-gpu transition-transform top-0 bottom-0 left-0 duration-200 fixed lg:max-w-sm lg:opacity-100 lg:translate-x-0"
     :class="
       props.open ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'
     "
   >
     <div
-      class="h-30 p-10 flex items-center justify-between border-b-2 border-zinc-200"
+      class="flex border-b-2 border-zinc-200 h-30 p-10 items-center justify-between"
     >
       <AppLogo
         label="Notesball"
@@ -48,13 +48,13 @@ const views = [
       />
     </div>
     <div
-      class="h-[calc(100%-196px)] p-10 flex flex-col justify-between lg:h-[calc(100%-120px)]"
+      class="flex flex-col h-[calc(100%-196px)] p-10 justify-between lg:h-[calc(100%-120px)]"
     >
       <nav aria-label="Main Navigation">
-        <span class="text-xs text-zinc-900 font-bold uppercase">
+        <span class="font-bold text-xs text-zinc-900 uppercase">
           Main navigation
         </span>
-        <ul class="py-4 flex flex-col items-start gap-4">
+        <ul class="flex flex-col py-4 gap-4 items-start">
           <li
             v-for="view in views"
             :key="view.path"
@@ -63,7 +63,7 @@ const views = [
             <RouterLink
               :to="view.path"
               @click="handleCloseSidebar"
-              class="px-2 py-4 flex items-center gap-2 text-base text-zinc-500 font-medium rounded"
+              class="rounded flex font-medium text-base py-4 px-2 text-zinc-500 gap-2 items-center"
             >
               <Icon
                 :icon="view.icon"
@@ -76,12 +76,12 @@ const views = [
           </li>
         </ul>
       </nav>
-      <footer class="w-full py-10 flex items-center justify-between gap-8">
+      <footer class="flex w-full py-10 gap-8 items-center justify-between">
         <div
-          class="flex flex-col items-start gap-2 sm:flex-row sm:items-center"
+          class="flex flex-col gap-2 items-start sm:flex-row sm:items-center"
         >
           <img
-            class="w-12 h-12 rounded-full object-cover"
+            class="rounded-full object-cover h-12 w-12"
             src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=80&q=80"
             alt="Profile picture - Jane Cooper"
             title="Jane Cooper"
@@ -110,6 +110,6 @@ const views = [
 <style lang="postcss">
 a.active,
 a.exact {
-  @apply bg-zinc-200 rounded;
+  @apply rounded bg-zinc-200;
 }
 </style>

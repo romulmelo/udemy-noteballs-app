@@ -26,24 +26,24 @@ onClickOutside(modalRef, handleCloseModal)
   <teleport to="#portal-root">
     <div
       v-if="props.open"
-      class="absolute top-0 left-0 z-10 h-full w-full"
+      class="h-full w-full top-0 left-0 z-10 absolute"
       role="dialog"
       aria-modal="true"
     >
       <div
-        class="fixed h-full w-full bg-zinc-800/20 backdrop-blur-[8px] backdrop-filter"
+        class="h-full bg-zinc-800/20 w-full fixed backdrop-filter backdrop-blur-[8px]"
       />
       <div
-        class="absolute top-1/2 left-1/2 w-[90vw] max-w-lg transform-gpu -translate-x-1/2 -translate-y-1/2 sm:mx-auto sm:w-full"
+        class="max-w-lg transform-gpu top-1/2 left-1/2 w-[90vw] -translate-x-1/2 -translate-y-1/2 absolute sm:mx-auto sm:w-full"
       >
         <div
           ref="modalRef"
-          class="bg-white rounded overflow-hidden shadow-md"
+          class="bg-white rounded shadow-md overflow-hidden"
         >
           <header
-            class="px-10 py-6 flex items-center justify-between border-b border-zinc-200"
+            class="border-b flex border-zinc-200 py-6 px-10 items-center justify-between"
           >
-            <h3 class="text-zinc-900 text-base font-bold">{{ props.title }}</h3>
+            <h3 class="font-bold text-base text-zinc-900">{{ props.title }}</h3>
             <button
               type="button"
               class="h-6 w-6"
@@ -61,7 +61,7 @@ onClickOutside(modalRef, handleCloseModal)
           <form class="p-10">
             <slot name="form" />
           </form>
-          <footer class="px-10 pb-10 flex flex-col gap-5 md:flex-row md:gap-10">
+          <footer class="flex flex-col px-10 pb-10 gap-5 md:flex-row md:gap-10">
             <AppButton
               size="large"
               variant="white"

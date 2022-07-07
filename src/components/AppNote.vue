@@ -1,32 +1,40 @@
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import { format } from 'date-fns'
 
 const props = defineProps({
-  toDelete: {
-    type: Boolean,
-    default: false
-  }
+  title: String,
+  content: String,
+  createdAt: Date,
+  toDelete: Boolean
 })
 
 const showModal = ref(false)
+
+const prettyDate = computed(() => format(new Date(props.createdAt), 'dd MMM'))
 </script>
 
 <template>
   <div
-    class="px-6 py-8 bg-white border border-zinc-200 rounded transition-shadow duration-300 hover:shadow-md hover:shadow-zinc-200"
+    class="bg-white border rounded border-zinc-200 py-8 px-6 transition-shadow duration-300 hover:shadow-md hover:shadow-zinc-200"
     @click="showModal = true"
   >
     <div class="flex flex-col">
+      <span class="font-medium text-sm pb-6 text-zinc-400 uppercase">
+        {{ prettyDate }}
+      </span>
       <header class="flex items-center justify-between">
-        <h2 class="text-xl text-zinc-900 font-bold">Dog in the office</h2>
+        <h2 class="font-bold text-xl text-zinc-900">
+          {{ props.title }}
+        </h2>
         <button
           v-if="props.toDelete"
           type="button"
-          class="w-6 h-6"
+          class="h-6 w-6"
           aria-label="Delete Note"
         >
           <ph-trash-simple
-            class="hover:text-red-400 hover:transition-colors hover:duration-300"
+            class="hover:transition-colors hover:text-red-400 hover:duration-300"
             width="24"
             height="24"
             color="#A1A1AA"
@@ -34,12 +42,7 @@ const showModal = ref(false)
         </button>
       </header>
       <p class="pt-4 text-zinc-800 line-clamp-5">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, in
-        quisquam odit quae recusandae illum animi architecto. Lorem ipsum dolor
-        sit amet consectetur adipisicing elit. Consequatur, in quisquam odit
-        quae recusandae illum animi architecto. Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Consequatur, in quisquam odit quae
-        recusandae illum animi architecto.
+        {{ props.content }}
       </p>
     </div>
   </div>
