@@ -63,7 +63,7 @@ useFocus(input, { initialValue: true })
       <div v-else class="flex text-zinc-800 gap-4 items-center">
         <span class="font-semibold text-[14px] uppercase">All notes</span>
         <span class="rounded font-semibold border-2 border-zinc-800 px-2">
-          3
+          {{ notes.length }}
         </span>
       </div>
       <ul class="grid py-10 gap-8 grid-cols-1 md:grid-cols-2 2xl:grid-cols-3">
