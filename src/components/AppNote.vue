@@ -1,5 +1,6 @@
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import { format } from 'date-fns'
 
 const props = defineProps({
   title: String,
@@ -9,6 +10,8 @@ const props = defineProps({
 })
 
 const showModal = ref(false)
+
+const prettyDate = computed(() => format(new Date(props.createdAt), 'dd MMM'))
 </script>
 
 <template>
@@ -17,8 +20,8 @@ const showModal = ref(false)
     @click="showModal = true"
   >
     <div class="flex flex-col">
-      <span class="text-sm pb-6 text-zinc-400 uppercase">
-        {{ props.createdAt }}
+      <span class="font-medium text-sm pb-6 text-zinc-400 uppercase">
+        {{ prettyDate }}
       </span>
       <header class="flex items-center justify-between">
         <h2 class="font-bold text-xl text-zinc-900">
