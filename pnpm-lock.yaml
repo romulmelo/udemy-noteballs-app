@@ -7,6 +7,7 @@ specifiers:
   '@iconify/vue': ^3.2.1
   '@vitejs/plugin-vue': ^2.3.3
   '@vueuse/core': ^8.7.5
+  date-fns: ^2.28.0
   husky: ^8.0.1
   prettier: ^2.7.0
   unplugin-icons: ^0.14.7
@@ -19,6 +20,7 @@ specifiers:
 
 dependencies:
   '@vueuse/core': 8.7.5_vue@3.2.37
+  date-fns: 2.28.0
   vue: 3.2.37
   vue-router: 4.0.16_vue@3.2.37
 
@@ -766,6 +768,11 @@ packages:
     resolution: {integrity: sha512-2iy1EkLdlBzQGvbweYRFxmFath8+K7+AKB0TlhHWkNuH+TmovaMH/Wp7V7R4u7f4SnX3OgLsU9t1NI9ioDnUpg==}
     engines: {node: '>=8'}
     dev: true
+
+  /date-fns/2.28.0:
+    resolution: {integrity: sha512-8d35hViGYx/QH0icHYCeLmsLmMUheMmTyV9Fcm6gvNwdw31yXXH+O85sOBJ+OLnLQMKZowvpKb6FgMIQjcpvQw==}
+    engines: {node: '>=0.11'}
+    dev: false
 
   /debug/4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
