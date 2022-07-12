@@ -1,8 +1,6 @@
 <script setup>
 import { reactive, ref } from 'vue'
-import { useFocus } from '@vueuse/core'
 
-const input = ref()
 const showModal = ref(false)
 const notes = ref([])
 const newNote = reactive({
@@ -29,8 +27,6 @@ const handleAddNewNote = () => {
 
   showModal.value = false
 }
-
-useFocus(input, { initialValue: true })
 </script>
 
 <template>
@@ -78,25 +74,9 @@ useFocus(input, { initialValue: true })
       </ul>
     </div>
   </main>
-  <AppModal v-model:open="showModal" title="Add a new note">
-    <template v-slot:form>
-      <input
-        v-model="newNote.title"
-        ref="input"
-        type="text"
-        class="border-none font-bold w-full placeholder-zinc-900/30 text-2xl text-zinc-900 md:text-3xl focus:outline-none"
-        placeholder="Untitled"
-      />
-      <textarea
-        v-model="newNote.content"
-        class="border rounded bg-zinc-50 border-2 border-zinc-200 mt-10 w-full min-h-52 p-4 ring-offset-2 ring-offset-zinc-200 resize-none focus:outline-none focus:ring-2"
-        placeholder="Type a note text"
-      />
-    </template>
-    <template v-slot:action>
-      <AppButton @click.prevent="handleAddNewNote" type="submit" size="large">
-        Add note
-      </AppButton>
-    </template>
-  </AppModal>
+  <AppAddNoteModal
+    v-model:open="showModal"
+    :note="newNote"
+    @addNewNote="handleAddNewNote"
+  />
 </template>

@@ -5,7 +5,7 @@ import { format } from 'date-fns'
 const props = defineProps({
   title: String,
   content: String,
-  createdAt: Date,
+  createdAt: String,
   toDelete: Boolean
 })
 
@@ -27,32 +27,10 @@ const prettyDate = computed(() => format(new Date(props.createdAt), 'dd MMM'))
         <h2 class="font-bold text-xl text-zinc-900">
           {{ props.title }}
         </h2>
-        <button
-          v-if="props.toDelete"
-          type="button"
-          class="h-6 w-6"
-          aria-label="Delete Note"
-        >
-          <ph-trash-simple
-            class="hover:transition-colors hover:text-red-400 hover:duration-300"
-            width="24"
-            height="24"
-            color="#A1A1AA"
-          />
-        </button>
       </header>
       <p class="pt-4 text-zinc-800 line-clamp-5">
         {{ props.content }}
       </p>
     </div>
   </div>
-  <AppModal
-    v-if="!props.toDelete"
-    title="Edit the note"
-    v-model:open="showModal"
-  >
-    <template v-slot:action>
-      <AppButton size="large">Save changes</AppButton>
-    </template>
-  </AppModal>
 </template>
