@@ -55,7 +55,7 @@ onClickOutside(modalRef, handleCloseModal)
         <form class="p-10">
           <slot name="content" />
           <div class="flex flex-col pt-10 gap-5 md:flex-row md:gap-10">
-            <AppButton size="large" variant="white" @click="handleCloseModal">
+            <AppButton variant="white" size="large" @click="handleCloseModal">
               Cancel
             </AppButton>
             <slot name="action" />

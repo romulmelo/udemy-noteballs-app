@@ -20,43 +20,36 @@ const props = defineProps({
 
 <template>
   <button
+    v-bind="$attrs"
     class="button"
-    :class="[
-      `button--${props.variant ?? 'primary'}`,
-      `button--${props.size ?? 'small'}`
-    ]"
     :type="props.type"
+    :class="[$style.button, $style[variant], $style[size]]"
   >
-    <Icon
-      v-if="props.icon"
-      :icon="props.icon"
-      width="24"
-      height="24"
-    />
+    <Icon v-if="props.icon" :icon="props.icon" width="24" height="24" />
     <span>
       <slot />
     </span>
   </button>
 </template>
 
-<style lang="postcss" scoped>
+<style module>
 .button {
   @apply rounded flex h-12 tracking-tight py-2 px-4 transition transition-colors text-[14px] gap-2 duration-200 items-center justify-center;
 }
 
-.button--primary {
+.primary {
   @apply bg-slate-800 text-white hover:bg-slate-900;
 }
 
-.button--white {
+.white {
   @apply bg-zinc-200 text-zinc-800 hover:bg-zinc-300;
 }
 
-.button--danger {
+.danger {
   @apply border border-red-500 text-red-600 hover:bg-red-400/30;
 }
 
-.button--large {
+.large {
   @apply w-full;
 }
 </style>

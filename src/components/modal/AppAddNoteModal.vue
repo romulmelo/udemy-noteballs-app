@@ -35,7 +35,12 @@ useFocus(inputRef, { initialValue: true })
         />
       </template>
       <template #action>
-        <AppButton type="submit" size="large" @click.prevent="handleAddNewNote">
+        <AppButton
+          type="submit"
+          variant="primary"
+          size="large"
+          @click.prevent="handleAddNewNote"
+        >
           Add note
         </AppButton>
       </template>

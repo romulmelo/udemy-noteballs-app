@@ -32,7 +32,7 @@ const handleAddNewNote = () => {
 <template>
   <AppHeader title="Notes">
     <template v-slot:button>
-      <AppButton icon="ph-plus" @click="showModal = true">
+      <AppButton variant="primary" icon="ph-plus" @click="showModal = true">
         Add a new note
       </AppButton>
     </template>
