@@ -39,6 +39,7 @@ useFocus(inputRef, { initialValue: true })
           type="submit"
           variant="primary"
           size="large"
+          :disabled="!props.note.title || !props.note.content"
           @click.prevent="handleAddNewNote"
         >
           Add note

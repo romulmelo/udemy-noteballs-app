@@ -37,8 +37,12 @@ const props = defineProps({
   @apply rounded flex h-12 tracking-tight py-2 px-4 transition transition-colors text-[14px] gap-2 duration-200 items-center justify-center;
 }
 
+.button:disabled {
+  @apply cursor-not-allowed opacity-80;
+}
+
 .primary {
-  @apply bg-slate-800 text-white hover:bg-slate-900;
+  @apply bg-slate-800 text-white hover:not-disabled:bg-slate-900;
 }
 
 .white {
