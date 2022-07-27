@@ -1,17 +1,26 @@
 <script setup>
-import { computed, ref } from 'vue'
-import { format } from 'date-fns'
+import { computed, ref } from "vue"
+
+import { format } from "date-fns"
 
 const props = defineProps({
-  title: String,
-  content: String,
-  createdAt: String,
-  toDelete: Boolean
+  title: {
+    type: String
+  },
+  content: {
+    type: String
+  },
+  createdAt: {
+    type: String
+  },
+  toDelete: {
+    type: Boolean
+  }
 })
 
 const showModal = ref(false)
 
-const prettyDate = computed(() => format(new Date(props.createdAt), 'dd MMM'))
+const prettyDate = computed(() => format(new Date(props.createdAt), "dd MMM"))
 </script>
 
 <template>

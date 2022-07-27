@@ -31,7 +31,7 @@ const handleAddNewNote = () => {
 
 <template>
   <AppHeader title="Notes">
-    <template v-slot:button>
+    <template #button>
       <AppButton variant="primary" icon="ph-plus" @click="showModal = true">
         Add a new note
       </AppButton>
@@ -67,8 +67,8 @@ const handleAddNewNote = () => {
           <AppNote
             :title="note.title"
             :content="note.content"
-            :createdAt="note.createdAt"
-            :toDelete="note.toDelete"
+            :created-at="note.createdAt"
+            :to-delete="note.toDelete"
           />
         </li>
       </ul>
@@ -76,7 +76,8 @@ const handleAddNewNote = () => {
   </main>
   <AppAddNoteModal
     v-model:open="showModal"
-    :note="newNote"
-    @addNewNote="handleAddNewNote"
+    v-model:title="newNote.title"
+    v-model:content="newNote.content"
+    @add-new-note="handleAddNewNote"
   />
 </template>

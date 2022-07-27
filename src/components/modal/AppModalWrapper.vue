@@ -1,6 +1,6 @@
 <script setup>
-import { ref } from 'vue'
-import { onClickOutside } from '@vueuse/core'
+import { ref } from "vue"
+import { onClickOutside } from "@vueuse/core"
 
 const props = defineProps({
   open: {
@@ -13,11 +13,11 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['update:open'])
+const emit = defineEmits(["update:open"])
 
 const modalRef = ref(null)
 
-const handleCloseModal = () => emit('update:open', false)
+const handleCloseModal = () => emit("update:open", false)
 
 onClickOutside(modalRef, handleCloseModal)
 </script>

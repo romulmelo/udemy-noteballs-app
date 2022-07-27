@@ -32,7 +32,7 @@ const props = defineProps({
   </button>
 </template>
 
-<style module>
+<style module lang="postcss">
 .button {
   @apply rounded flex h-12 tracking-tight py-2 px-4 transition transition-colors text-[14px] gap-2 duration-200 items-center justify-center;
 }

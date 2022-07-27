@@ -1,5 +1,5 @@
 <script setup>
-import { Icon } from '@iconify/vue'
+import { Icon } from "@iconify/vue"
 
 const props = defineProps({
   open: {
@@ -8,25 +8,25 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['update:open', Boolean])
+const emit = defineEmits(["update:open", Boolean])
 
-const handleCloseSidebar = () => emit('update:open', false)
+const handleCloseSidebar = () => emit("update:open", false)
 
 const views = [
   {
-    description: 'All notes',
-    path: '/',
-    icon: 'ph-notepad'
+    description: "All notes",
+    path: "/",
+    icon: "ph-notepad"
   },
   {
-    description: 'Stats',
-    path: '/stats',
-    icon: 'ph-trend-up'
+    description: "Stats",
+    path: "/stats",
+    icon: "ph-trend-up"
   },
   {
-    description: 'Deleted notes',
-    path: '/deleted-notes',
-    icon: 'ph-trash-simple'
+    description: "Deleted notes",
+    path: "/deleted-notes",
+    icon: "ph-trash-simple"
   }
 ]
 </script>
@@ -41,11 +41,7 @@ const views = [
     <div
       class="flex border-b-2 border-zinc-200 h-30 p-10 items-center justify-between"
     >
-      <AppLogo
-        label="Notesball"
-        aria-label="Site Logo"
-        role="banner"
-      />
+      <AppLogo label="Notesball" aria-label="Site Logo" role="banner" />
     </div>
     <div
       class="flex flex-col h-[calc(100%-196px)] p-10 justify-between lg:h-[calc(100%-120px)]"
@@ -55,22 +51,13 @@ const views = [
           Main navigation
         </span>
         <ul class="flex flex-col py-4 gap-4 items-start">
-          <li
-            v-for="view in views"
-            :key="view.path"
-            class="w-full"
-          >
+          <li v-for="view in views" :key="view.path" class="w-full">
             <RouterLink
               :to="view.path"
-              @click="handleCloseSidebar"
               class="rounded flex font-medium text-base py-4 px-2 text-zinc-500 gap-2 items-center"
+              @click="handleCloseSidebar"
             >
-              <Icon
-                :icon="view.icon"
-                width="24"
-                height="24"
-                color="#71717A"
-              />
+              <Icon :icon="view.icon" width="24" height="24" color="#71717A" />
               <span>{{ view.description }}</span>
             </RouterLink>
           </li>
@@ -91,16 +78,8 @@ const views = [
             <span class="text-sm text-zinc-600"> jane.cooper@email.com </span>
           </div>
         </div>
-        <button
-          type="button"
-          aria-label="Sign Out"
-          title="Sign Out"
-        >
-          <ph-sign-out
-            height="32"
-            width="32"
-            color="#71717A"
-          />
+        <button type="button" aria-label="Sign Out" title="Sign Out">
+          <ph-sign-out height="32" width="32" color="#71717A" />
         </button>
       </footer>
     </div>
