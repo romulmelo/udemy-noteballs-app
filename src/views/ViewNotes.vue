@@ -1,11 +1,11 @@
 <script setup>
-import { reactive, ref } from 'vue'
+import { reactive, ref, onMounted } from "vue"
 
 const showModal = ref(false)
 const notes = ref([])
 const newNote = reactive({
-  title: '',
-  content: ''
+  title: "",
+  content: ""
 })
 
 const handleAddNewNote = () => {
@@ -22,11 +22,18 @@ const handleAddNewNote = () => {
 
   notes.value.unshift(note)
 
-  newNote.title = ''
-  newNote.content = ''
+  newNote.title = ""
+  newNote.content = ""
 
   showModal.value = false
 }
+
+onMounted(async () => {
+  const response = await fetch("/api/notes")
+  const data = await response.json()
+
+  notes.value = data.notes
+})
 </script>
 
 <template>
