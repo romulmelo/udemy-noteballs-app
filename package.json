@@ -26,6 +26,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.3.0",
     "husky": "^8.0.1",
+    "miragejs": "^0.1.45",
     "prettier": "^2.7.1",
     "unplugin-icons": "^0.14.7",
     "unplugin-vue-components": "^0.21.2",
